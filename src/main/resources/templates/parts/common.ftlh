@@ -51,6 +51,11 @@ a:active {
   border:none;
   color: #999;
 }
+.img_container {
+color: #fff;
+text-shadow: 1px 1px 1px black;
+}
+
 </style>
 
 </head>
@@ -64,7 +69,7 @@ a:active {
     <#nested>
 </div>
 
-<nav class="navbar footer sticky-bottom navbar-dark bg-dark">
+<nav class="navbar footer fixed-bottom navbar-dark bg-dark">
 Tweee
 </nav>
 <!-- Optional JavaScript -->

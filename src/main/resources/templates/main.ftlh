@@ -1,6 +1,5 @@
 <#import "parts/common.ftlh" as c>
 
-
 <@c.page>
 <div class="form-row">
 <div class="form-group col-md-6">
@@ -40,9 +39,10 @@ Add new Message
         style="
     background-image: url('https://source.unsplash.com/1600x900/?<#if message.tag??>${message.tag}</#if>');
         background-size: cover;
-        height: 100%;"
+        height: 100%;
+"
 
-        class="card text-white h-300 bg-light my-3" >
+        class="card crd text-white img_container h-300 bg-light my-3" >
     <div class="card-body">
 
         <div class="card-title m-2">
