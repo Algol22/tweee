@@ -8,7 +8,7 @@
         background-size: cover;
         height: 100%;"
 
-        class="card text-white h-300 bg-light my-3" >
+        class="card img_container text-white h-300 bg-light my-3" >
     <div class="m-2">
         <span>${message.text}</span><br/>
         <i>#${message.tag}</i>
