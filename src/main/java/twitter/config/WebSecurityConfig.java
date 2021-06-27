@@ -35,4 +35,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         auth.userDetailsService(userSevice)
                 .passwordEncoder(NoOpPasswordEncoder.getInstance());
     }
+
 }
