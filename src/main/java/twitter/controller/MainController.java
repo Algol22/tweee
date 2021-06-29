@@ -174,4 +174,26 @@ public class MainController {
         return "redirect:/user-messages/" + user;
     }
 
+
+
+
+    @GetMapping("/del-messages/")
+
+
+    public String deleteMessages(
+            @RequestParam("message") Long messageId
+    ) throws IOException {
+
+        messageRepo.deleteById(messageId);
+
+        return "redirect:/main";
+    }
+
+
+
+
+
+
+
+
 }

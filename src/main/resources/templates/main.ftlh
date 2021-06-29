@@ -1,4 +1,5 @@
 <#import "parts/common.ftlh" as c>
+<#include "parts/security.ftlh">
 
 <@c.page>
 <div class="form-row">
@@ -17,10 +18,22 @@ Add new Message
 <div class="form-group mt-3">
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <input type="text" class="form-control" name="text" placeholder="Введите сообщение" />
+            <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
+                   value="<#if message??>${message.text}</#if>" name="text" placeholder="Введите сообщение" />
+            <#if textError??>
+            <div class="invalid-feedback">
+                ${textError}
+            </div>
+        </#if>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="tag" placeholder="Тэг">
+            <input type="text" class="form-control"
+                   value="<#if message??>${message.tag}</#if>" name="tag" placeholder="Тэг" />
+            <#if tagError??>
+            <div class="invalid-feedback">
+                ${tagError}
+            </div>
+        </#if>
         </div>
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
         <div class="form-group">
@@ -54,7 +67,9 @@ Add new Message
         </div>
         <div class="card-footer">
             ${message.authorName}
-
+            <#if isAdmin>
+            <a class="btn btn-secondary" href="/del-messages/?message=${message.id}">Delete</a>
+        </#if>
         </div>
 
     </div>
