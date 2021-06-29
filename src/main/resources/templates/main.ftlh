@@ -19,7 +19,7 @@ Add new Message
     <form method="post" enctype="multipart/form-data">
         <div class="form-group">
             <input type="text" class="form-control ${(textError??)?string('is-invalid', '')}"
-                   value="<#if message??>${message.text}</#if>" name="text" placeholder="Введите сообщение" />
+                   value="" name="text" placeholder="Введите сообщение" data-toggle="tooltip"  title="required" required>
             <#if textError??>
             <div class="invalid-feedback">
                 ${textError}
@@ -28,7 +28,7 @@ Add new Message
         </div>
         <div class="form-group">
             <input type="text" class="form-control"
-                   value="<#if message??>${message.tag}</#if>" name="tag" placeholder="Тэг" />
+                   value="" name="tag" placeholder="Тэг" data-toggle="tooltip"  title="required" required>
             <#if tagError??>
             <div class="invalid-feedback">
                 ${tagError}
